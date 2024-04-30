@@ -11,12 +11,13 @@ $transformedData = [];
 
 // Iterate through the original array
 foreach ($rawData as $city => $info) {
-    
+    //transformations
+    $timeStampAareConverted = date('Y-m-d H:i:s', $info['aare']['timestamp']);
     // Extract and transform the necessary data
     $transformedData[$city] = [
         'name' => $info['aare']['location'],
         'longname' => $info['aare']['location_long'], 
-        'timestamp' => $info['aare']['timestamp'],
+        'timestamp' => $timeStampAareConverted,
         'temperature_water' => $info['aare']['temperature'],
         'temperature_water_prec' => $info['aare']['temperature_prec'],
         'coordinates' => [
