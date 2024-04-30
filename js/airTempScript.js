@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     acc.push({
                         label: entry.name,
-                        data: [{x: entry.timestamp, y: entry.temperature_air}],
+                        data: [{x: new Date(entry.timestamp), y: entry.temperature_air}],
                         borderColor: getRandomColor(),
                         fill: false
                     });
@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         x: {
                             type: 'time',
                             time: {
-                                unit: 'minute'
+                                parser: 'yyyy-MM-dd HH:mm:ss', 
+                                unit: 'minute',
+                                displayFormats: {
+                                    minute: 'D. MMM, yyyy HH:mm' // Customize this format as you prefer
+                                }
                             },
                             title: {
                                 display: true,
@@ -49,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         y: {
                             title: {
                                 display: true,
-                                text: 'Wassertemperatur (°C)'
+                                text: 'Lufttemperatur (°C)'
                             }
                         }
                     }

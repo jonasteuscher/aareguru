@@ -7,18 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const datasets = data.reduce((acc, entry) => {
                 const dataset = acc.find(ds => ds.label === entry.name);
                 if (dataset) {
-                    dataset.data.push({x: entry.timestamp, y: entry.temperature_water_prec});
+                    dataset.data.push({x: new Date(entry.timestamp), y: entry.temperature_water_prec});
                 } else {
                     acc.push({
                         label: entry.name,
-                        data: [{x: entry.timestamp, y: entry.temperature_water_prec}],
+                        data: [{x: new Date(entry.timestamp), y: entry.temperature_water_prec}],
                         borderColor: getRandomColor(),
                         fill: false
                     });
                 }
                 return acc;
             }, []);
-    
+            
             const ctx = document.getElementById('waterTemperatureChart').getContext('2d');
             const temperatureChart = new Chart(ctx, {
                 type: 'line',
@@ -30,7 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         x: {
                             type: 'time',
                             time: {
-                                unit: 'minute'
+                                parser: 'yyyy-MM-dd HH:mm:ss', // Specify the parser format if needed
+                                unit: 'minute',
+                                displayFormats: {
+                                    minute: 'D. MMM, yyyy HH:mm' // Customize this format as you prefer
+                                }
                             },
                             title: {
                                 display: true,
