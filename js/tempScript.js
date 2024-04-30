@@ -4,51 +4,52 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            // Prepare data for Chart.js
-            const chartData = data.reduce((acc, curr) => {
-                if (!acc[curr.name]) {
-                    acc[curr.name] = {
-                        label: curr.name,
-                        data: [],
-                        backgroundColor: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`,
-                    };
+            const datasets = data.reduce((acc, entry) => {
+                const dataset = acc.find(ds => ds.label === entry.name);
+                if (dataset) {
+                    dataset.data.push({x: entry.timestamp, y: entry.temperature_water});
+                } else {
+                    acc.push({
+                        label: entry.name,
+                        data: [{x: entry.timestamp, y: entry.temperature_water}],
+                        borderColor: getRandomColor(),
+                        fill: false
+                    });
                 }
-                acc[curr.name].data.push({
-                    x: curr.timestamp,
-                    y: curr.temperature_water
-                });
                 return acc;
-            }, {});
-
-            // Sort data by date for each location
-            Object.values(chartData).forEach(location => {
-                location.data.sort((a, b) => a.x - b.x);
-            });
-
-            // Create Chart.js chart
+            }, []);
+    
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+    
             const ctx = document.getElementById('temperatureChart').getContext('2d');
-            new Chart(ctx, {
+            const temperatureChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    datasets: Object.values(chartData),
+                    datasets: datasets
                 },
                 options: {
                     scales: {
                         x: {
                             type: 'time',
                             time: {
-                                unit: 'hour',
-                                tooltipFormat: 'HH:mm', // Format for tooltip
+                                unit: 'minute'
                             },
-                            scaleLabel: {
+                            title: {
                                 display: true,
-                                labelString: 'Time'
+                                text: 'Datum und Zeit'
                             }
                         },
                         y: {
-                            scaleLabel: {
+                            title: {
                                 display: true,
-                                labelString: 'Temperature (°C)'
+                                text: 'Temperatur (°C)'
                             }
                         }
                     }
