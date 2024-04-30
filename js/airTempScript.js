@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const datasets = data.reduce((acc, entry) => {
                 const dataset = acc.find(ds => ds.label === entry.name);
                 if (dataset) {
-                    dataset.data.push({x: entry.timestamp, y: entry.temperature_water});
+                    dataset.data.push({x: entry.timestamp, y: entry.temperature_air});
                 } else {
                     acc.push({
                         label: entry.name,
-                        data: [{x: entry.timestamp, y: entry.temperature_water}],
+                        data: [{x: entry.timestamp, y: entry.temperature_air}],
                         borderColor: getRandomColor(),
                         fill: false
                     });
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return color;
             }
     
-            const ctx = document.getElementById('temperatureChart').getContext('2d');
+            const ctx = document.getElementById('airTemperatureChart').getContext('2d');
             const temperatureChart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         y: {
                             title: {
                                 display: true,
-                                text: 'Temperatur (°C)'
+                                text: 'Wassertemperatur (°C)'
                             }
                         }
                     }
