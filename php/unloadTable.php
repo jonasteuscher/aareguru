@@ -66,17 +66,17 @@ try {
     <table id="dataTable">
         <thead>
             <tr>
-                <th onclick="sortTable(0, this)">Name<span class="arrow"></span></th>
-                <th onclick="sortTable(1, this)">Long Name<span class="arrow"></span></th>
-                <th onclick="sortTable(2, this)">Timestamp<span class="arrow"></span></th>
-                <th onclick="sortTable(3, this)">Temperature Water<span class="arrow"></span></th>
-                <th onclick="sortTable(4, this)">Temperature Water Prec.<span class="arrow"></span></th>
-                <th onclick="sortTable(5, this)">Latitude<span class="arrow"></span></th>
-                <th onclick="sortTable(6, this)">Longitude<span class="arrow"></span></th>
-                <th onclick="sortTable(7, this)">Flow<span class="arrow"></span></th>
-                <th onclick="sortTable(8, this)">Rainfall<span class="arrow"></span></th>
-                <th onclick="sortTable(9, this)">Rainfall Prec.<span class="arrow"></span></th>
-                <th onclick="sortTable(10, this)">Temperature Air<span class="arrow"></span></th>
+                <th onclick="sortTable(0, this)">Name (kurz)<span class="arrow"></span></th>
+                <th onclick="sortTable(1, this)">Name (lang)<span class="arrow"></span></th>
+                <th onclick="sortTable(2, this)">Datum der Messung<span class="arrow"></span></th>
+                <th onclick="sortTable(3, this)">Wassertemperatur (C°)gerundet<span class="arrow"></span></th>
+                <th onclick="sortTable(4, this)">Wassertemperatur (C°) genau<span class="arrow"></span></th>
+                <th onclick="sortTable(5, this)">Koordinaten (latitude)<span class="arrow"></span></th>
+                <th onclick="sortTable(6, this)">Koordinaten (longitude)<span class="arrow"></span></th>
+                <th onclick="sortTable(7, this)">Wassermenge(m3/s)<span class="arrow"></span></th>
+                <th onclick="sortTable(8, this)">Regen (mm/m3) gerundet<span class="arrow"></span></th>
+                <th onclick="sortTable(9, this)">Regen (mm/m3) genau<span class="arrow"></span></th>
+                <th onclick="sortTable(10, this)">Lufttemperatur (C°)<span class="arrow"></span></th>
             </tr>
         </thead>
         <tbody>
