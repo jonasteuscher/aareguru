@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Visualization</title>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <h1>Tabellenansicht:</h1>
     <a href="/php/unloadTable.php">Zur Tabellenansicht</a>
-    <h1>Wassertemperatur aller Standorte</h1>
-    <canvas id="waterTemperatureChart"></canvas>
-    <script src="js/waterTempScript.js"></script>
-    <h1>Lufttemperatur aller Standorte</h1>
-    <canvas id="airTemperatureChart"></canvas>
-    <script src="js/airTempScript.js"></script>
-    <h1>Wassermenge aller Standorte</h1>
-    <canvas id="flowChart"></canvas>
-    <script src="js/flowScript.js"></script>
-</body>
+    <div class="city-container">
+      <h1>Wassertemperatur aller Standorte</h1>
+      <canvas id="waterTemperatureChart"></canvas>
+      <script src="js/waterTempScript.js"></script>
+    </div>
+    <div class="city-container">
+      <h1>Lufttemperatur aller Standorte</h1>
+      <canvas id="airTemperatureChart"></canvas>
+      <script src="js/airTempScript.js"></script>
+    </div>
+    <div class="city-container">
+      <h1>Wassermenge aller Standorte</h1>
+      <canvas id="flowChart"></canvas>
+      <script src="js/flowScript.js"></script>
+    </div>
+  </body>
 </html>
-
