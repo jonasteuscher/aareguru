@@ -1,14 +1,75 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  padding: 20px;
+  margin: 0; /* Remove default margin */
+  padding: 20px; /* Padding around the content of the body */
 }
-h1 {
+
+h1, h2 {
   color: #333;
 }
-.city-container {
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007BFF; /* Bootstrap blue */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover, .button:focus {
+  background-color: #0056b3; /* Darker blue */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  background-color: #004085; /* Even darker blue */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) inset;
+}
+
+.container {
   background-color: #f4f4f4;
   border: 1px solid #ddd;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 20px;
+  margin: 20px auto; /* Center the container with auto margin on left and right */
+  width: 95%; /* Set width to be a bit smaller */
+  box-sizing: border-box; /* Include padding and border in the width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align children elements */
+}
+
+canvas {
+  width: 100%; /* Canvas width full container */
+  height: 200px; /* Adjust height smaller */
+}
+
+#map {
+  width: 100%; /* Responsive map width */
+  height: 550px; /* Smaller height */
+}
+
+.marker {
+  background-image: url('https://media.istockphoto.com/id/627149672/vector/blood-drops-icon.jpg?s=612x612&w=0&k=20&c=FtDCQ0N3uib9XT--ljVVGuXJnLSACoZdttxBw-eXBMc=');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%; /* Allow a little margin on very small devices */
+    margin: 10px auto;
+    padding: 10px;
+  }
+  body {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+  canvas {
+    height: 200px; /* Smaller canvas on small screens */
+  }
 }

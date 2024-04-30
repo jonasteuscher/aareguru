@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://161649-6.web.fhgr.ch/php/unload.php'; // Passen Sie die URL bei Bedarf an
+    const apiUrl = 'https://161649-6.web.fhgr.ch/php/unloadAll.php'; // Passen Sie die URL bei Bedarf an
 
     fetch(apiUrl)
         .then(response => response.json())
-        .then(data => {
+        .then(rawData => {
+            const params = new URLSearchParams(window.location.search);
+            const cityName = params.get('city');  // Get the value of 'city' parameter
+            const data = rawData.filter(item => item.name === cityName);
             const datasets = data.reduce((acc, entry) => {
                 const dataset = acc.find(ds => ds.label === entry.name);
                 if (dataset) {
@@ -47,13 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             },
                             title: {
                                 display: true,
-                                text: 'Time'
+                                text: 'Datum und Uhrzeit'
                             }
                         },
                         y: {
                             title: {
                                 display: true,
-                                text: 'Wassermenge (m^3/s)'
+                                text: 'Wassermenge (m3/s)'
                             },
                             beginAtZero: true
                         }

@@ -26,7 +26,9 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Table</title>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>Tabellenansicht</title>
     <style>
         table {
             width: 100%;
@@ -59,6 +61,8 @@ try {
     </style>
 </head>
 <body>
+<button class="button" onclick="closeWindow()">Zurück zur Karte</button>
+<br><br>
     <table id="dataTable">
         <thead>
             <tr>
@@ -95,6 +99,9 @@ try {
     </table>
 
     <script>
+        function closeWindow() {
+            history.back()
+        }
         function sortTable(column, element) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("dataTable");
@@ -130,6 +137,7 @@ try {
             // Add arrow direction class to the clicked header
             element.classList.add(dir);
         }
+        
     </script>
 </body>
 </html>

@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://161649-6.web.fhgr.ch/php/unload.php'; // Passen Sie die URL bei Bedarf an
-
+    const apiUrl = 'https://161649-6.web.fhgr.ch/php/unloadAll.php'; // Passen Sie die URL bei Bedarf an
     fetch(apiUrl)
         .then(response => response.json())
-        .then(data => {
+        .then(rawData => {
+            const params = new URLSearchParams(window.location.search);
+            const cityName = params.get('city');  // Get the value of 'city' parameter
+            const data = rawData.filter(item => item.name === cityName);
+            console.log(data);
             const datasets = data.reduce((acc, entry) => {
                 const dataset = acc.find(ds => ds.label === entry.name);
                 if (dataset) {
-                    dataset.data.push({x: entry.timestamp, y: entry.temperature_air});
+                    dataset.data.push({x: new Date(entry.timestamp), y: entry.temperature_air});
                 } else {
                     acc.push({
                         label: entry.name,
@@ -27,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 return color;
             }
-    
             const ctx = document.getElementById('airTemperatureChart').getContext('2d');
             const temperatureChart = new Chart(ctx, {
                 type: 'line',
