@@ -13,6 +13,9 @@ zuverlässige und benutzerfreundliche Plattform in Form einer Karte (mit Integra
 zur Verfügung zu stellen, auf der Sie die Bedingungen an der Aare überwachen und vergleichen können.
 
 ## Learnings / Schwierigkeiten
+### Copilot
+Der Einsatz von Copilot hat uns bei der Entwicklung dieses Projekts sehr geholfen. Copilot ist ein KI-gesteuertes Programmierwerkzeug, das uns beim Schreiben von Code unterstützt. Es generiert automatisch Codevorschläge basierend auf dem Kontext und der Absicht des Entwicklers. Dadurch konnten wir schneller und effizienter arbeiten und Fehler reduzieren. Copilot hat uns bei der Implementierung verschiedener Funktionen und Integrationen wie MapBox und Chart.js unterstützt. Es war eine wertvolle Ergänzung für unser Entwicklerteam und hat uns dabei geholfen, qualitativ hochwertigen Code zu schreiben.
+
 ### MapBox ist der Hammer
 Die Integration von MapBox ermöglicht es uns, die verschiedenen Standorte entlang der Aare auf einer interaktiven Karte darzustellen. Dadurch können die Nutzer die Bedingungen an verschiedenen Orten leicht vergleichen und die besten Schwimmstellen finden. MapBox bietet auch eine Vielzahl von Anpassungsmöglichkeiten, um die Karte an unsere Bedürfnisse anzupassen, wie z.B. das Hinzufügen von Markern, Popups und benutzerdefinierten Stilen. Mit MapBox wird die Benutzererfahrung unserer Plattform deutlich verbessert.
 
