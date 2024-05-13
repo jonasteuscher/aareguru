@@ -2,12 +2,11 @@
 
 ## Beschreibung des Projekts
 **AAREWÄRT - Dini Übersicht für ne Schwumm**
-Beschreibung des Projekts:
  
 Mit *AAREWÄRT* präsentieren wir eine Übersicht 
 über die Aare in der Schweiz. Das Projekt bietet
 Informationen wie den aktuellen Wasserstand, die
-Wassertemperatur und weitere relevante Daten.
+Wassertemperatur oder Lufttemperatur an den verschiedenen Standorten.
 
 Das Ziel des Projekts ist es, den Nutzern eine
 zuverlässige und benutzerfreundliche Plattform
@@ -19,11 +18,11 @@ an der Aare zu überwachen
 
 ## Ressourcen
 
-## API
+### API
 Für die Abfrage und Anzeige der Daten wird die offiezielle API von Aareguru verwendet:
 https://aareguru.existenz.ch/openapi/
 
-## Visualisierung
+### Visualisierung
 #### ChartJS
 Die Visualsierung der Daten wird mit Chart.js gemacht: https://www.chartjs.org/
 #### MapBox
