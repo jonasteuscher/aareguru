@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const cityName = params.get('city');  // Get the value of 'city' parameter
             const data = rawData.filter(item => item.name === cityName);
-            console.log(data);
             const datasets = data.reduce((acc, entry) => {
                 const dataset = acc.find(ds => ds.label === entry.name);
                 if (dataset) {
@@ -41,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         x: {
                             type: 'time',
                             time: {
-                                parser: 'yyyy-MM-dd HH:mm:ss', 
-                                unit: 'minute',
+                                parser: 'yyyy-MM-dd', // Specify the parser format if needed
+                                unit: 'day',
                                 displayFormats: {
-                                    minute: 'D. MMM, yyyy HH:mm' // Customize this format as you prefer
+                                    minute: 'D. MMM' // Customize this format as you prefer
                                 }
                             },
                             title: {

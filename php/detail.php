@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detailansicht</title>
+    <title>AAREWÄRT</title>
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -27,27 +27,41 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    <link rel="icon" href="../data/img/favicon.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   
   <body>
-  <button class="button" onclick="closeWindow()">Zurück zur Karte</button>
-    <br>
+  <header>
+      <img src="../data/img/logo.png" class="logo" alt="Logo" />
+    </header>
+    <header>
+      <img src="../data/img/logo.png" class="logo" alt="Logo" />
+    </header>
+    
+  <div class="flexGrid">
+    <button class="button" onclick="closeWindow()">Zrügg zur Chartä</button>
     <h1 class="detail-header" id="detailHeader"></h1>
-    <div class="container" id="waterChartContainer" style="display: none;">
-    <h1 id="detailHeader"></h1><br><br>
-    <canvas id="waterTemperatureChart"></canvas>
-    <script src="../js/waterTempScript.js"></script>
+  </div>
+  <h2 id="city-coordinates">Koordinate vor Mässig: </h2>
+  <div class="container" id="waterChartContainer" style="display: none;">
+    <div class="chartContainer">
+      <canvas id="waterTemperatureChart"></canvas>
+      <script src="../js/waterTempScript.js"></script>
+    </div>
   </div>
   <div class="container" id="airChartContainer" style="display: none;">
-  <h1 id="detailHeader"></h1><br><br>
-    <canvas id="airTemperatureChart"></canvas>
-    <script src="../js/airTempScript.js"></script>
+    <div class="chartContainer">
+      <canvas id="airTemperatureChart"></canvas>
+      <script src="../js/airTempScript.js"></script>
+    </div>
   </div>
   <div class="container" id="flowChartContainer" style="display: none;">
-  <h1 id="detailHeader"></h1><br><br>
-    <canvas id="flowChart"></canvas>
-    <script src="../js/flowScript.js"></script>
+    <div class="chartContainer">
+      <canvas id="flowChart"></canvas>
+      <script src="../js/flowScript.js"></script>
+    </div>
   </div>
   </body>
   <script>
@@ -59,6 +73,9 @@
       return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     };
 
+    const apiUrl = 'https://161649-6.web.fhgr.ch/php/unloadCities.php'
+
+   
     // Get the value of the detailView parameter from the URL
     var detailView = getUrlParameter('detailView');
     // Get the value of the city parameter from the URL
@@ -85,5 +102,18 @@
     } else if (detailView === 'flow') {
       document.getElementById('flowChartContainer').style.display = 'block';
     }
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(cityData => {
+          const rightCity = cityData.find(c => c.name === city); // Find the city in the array
+          const coordinatesHeader = document.getElementById("city-coordinates");
+          if (rightCity) {
+              // Update H2 text with coordinates
+              coordinatesHeader.textContent = "Koordinate: " + rightCity.lat + "°N, " + rightCity.lon + "°E";
+          } else {
+            coordinatesHeader.textContent = "Nid verfüegbar";
+          }
+        });
   </script>
 </html>

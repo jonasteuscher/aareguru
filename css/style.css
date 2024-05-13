@@ -1,41 +1,97 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Comfortaa;
   line-height: 1.6;
   margin: 0; /* Remove default margin */
   padding: 20px; /* Padding around the content of the body */
+  background-color: #24ACCF;
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Take full viewport height */
 }
 
-h1, h2 {
-  color: #333;
+h1 {
+  color: #ffe500;
+  text-align: center; /* Center text horizontally */
+  font-size:xx-large;
+  margin: 0;
 }
+
+h2 {
+  color: #ffe500;
+  text-align: center; /* Center text horizontally */
+  font-size: large;
+  margin-top: 0px;
+}
+
+.flexGrid {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically in the center */
+  position: relative; /* Set position context for absolute positioning */
+  width: 100%; /* Full width */
+}
+
+.logo {
+  height: 100px;  /* Adjust the size as needed */
+  width: 100px;   /* Adjust the size as needed */
+  position: absolute;
+  top: 10px;     /* Adjust the position from the top */
+  right: 45px;    /* Adjust the position from the left */
+}
+
 .button {
   padding: 10px 20px;
   font-size: 16px;
-  color: white;
-  background-color: #007BFF; /* Bootstrap blue */
+  color: #666666;
+  background-color: #ffe500;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
+  position: absolute; /* Position absolutely within its parent */
+  z-index: 1000;
+  margin-left: 2.7%;
+}
+
+.mapboxgl-popup-content {
+  background-color: #24ACCF;
+  color: #ffe500;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.detail-header {
+  width: 100%; /* Take full width to ensure centering */
+  color: #ffe500;
+  text-align: center; /* Center text horizontally */
+  font-size: xx-large;
+  margin: 0; /* Remove margin to ensure proper centering */
+  z-index: 1;
+  position: relative; /* Ensure it is in normal document flow */
 }
 
 .button:hover, .button:focus {
-  background-color: #0056b3; /* Darker blue */
+  background-color: #ccb700; /* Darker blue */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.button:active {
-  background-color: #004085; /* Even darker blue */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) inset;
-}
-
 .container {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 20px auto; /* Center the container with auto margin on left and right */
+  background-color: #ffe500;
+  padding: 7px;
+  margin: 7px auto; /* Center the container with auto margin on left and right */
   width: 95%; /* Set width to be a bit smaller */
   box-sizing: border-box; /* Include padding and border in the width */
+  border-radius: 6pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align children elements */
+}
+
+.chartContainer {
+  background-color: white;
+  height: 95%;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the width */
+  border-radius: 4pt;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center-align children elements */
@@ -60,6 +116,9 @@ canvas {
   cursor: pointer;
 }
 
+@media (max-width: 890px) {
+
+}
 @media (max-width: 600px) {
   .container {
     width: 95%; /* Allow a little margin on very small devices */
@@ -72,4 +131,39 @@ canvas {
   canvas {
     height: 200px; /* Smaller canvas on small screens */
   }
+  .button {
+    margin-top: 700px;
+    margin-left: 33%;
+  }
 }
+
+/* Basic styling for a navigation bar */
+.navbar {
+  background-color: #333; /* Dark background for the navbar */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Some padding around the items */
+  display: flex; /* Using flexbox to align navigation items */
+  justify-content: space-between; /* Space out nav items */
+  align-items: center; /* Align items vertically */
+}
+
+.navbar a {
+  color: white; /* Ensures that all links are white */
+  text-decoration: none; /* No underline on links */
+  margin-left: 10px; /* Space between links */
+}
+
+.navbar a:hover {
+  text-decoration: underline; /* Underline on hover for visual feedback */
+}
+
+/* Additional specific styles */
+.content {
+  padding: 20px; /* Padding around the content area */
+  background: #f0f0f0; /* Light grey background */
+}
+
+.mapboxgl-canvas {
+  border-radius: 10px; /* Rounded corners for the map */
+}
+

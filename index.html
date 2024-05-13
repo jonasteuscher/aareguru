@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map View</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AARÄWÄRT</title>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js"></script>
@@ -12,6 +12,7 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
       rel="stylesheet"
     />
+    <link rel="icon" href="/data/img/favicon.ico" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -27,11 +28,15 @@
     ></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <h1>Alle Standorte im Vergleich</h1>
-    <button class="button" onclick="location.href='/php/unloadTable.php'" type="button">Zur Tabellenansicht</button>
+    <header>
+      <img src="../data/img/logo.png" class="logo" alt="Logo" />
+    </header>
+    <h1>Wie warm isches?</h1>
+    <h2>Verglich hie die verschidene Mässwärt</h2>
     <div class="container">
-        <div id="map"></div>
+      <div id="map"></div>
     </div>
     <script src="js/mapbox.js"></script>
   </body>

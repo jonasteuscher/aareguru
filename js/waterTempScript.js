@@ -33,15 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         x: {
                             type: 'time',
                             time: {
-                                parser: 'yyyy-MM-dd HH:mm:ss', // Specify the parser format if needed
-                                unit: 'minute',
+                                parser: 'yyyy-MM-dd', // Specify the parser format if needed
+                                unit: 'day',
                                 displayFormats: {
-                                    minute: 'D. MMM, yyyy HH:mm' // Customize this format as you prefer
+                                    minute: 'dd' // Customize this format as you prefer
                                 }
                             },
                             title: {
                                 display: true,
-                                text: 'Datum und Zeit'
+                                text: 'Datum'
                             }
                         },
                         y: {

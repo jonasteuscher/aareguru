@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         x: {
                             type: 'time',
                             time: {
-                                parser: 'yyyy-MM-dd HH:mm:ss', 
-                                unit: 'minute',
+                                parser: 'yyyy-MM-dd', // Specify the parser format if needed
+                                unit: 'day',
                                 displayFormats: {
-                                    minute: 'D. MMM, yyyy HH:mm' // Customize this format as you prefer
+                                    minute: 'D. MMM' // Customize this format as you prefer
                                 }
                             },
                             title: {
