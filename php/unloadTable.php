@@ -1,3 +1,5 @@
+<!-- TABLE VIEW (currently not in use) -->
+
 <?php
 
 require_once 'config.php'; // Includes the database configuration
