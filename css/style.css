@@ -35,6 +35,8 @@ h2 {
   position: absolute;
   top: 10px;     /* Adjust the position from the top */
   right: 45px;    /* Adjust the position from the left */
+  cursor: pointer;
+  z-index: 1000;
 }
 
 .button {

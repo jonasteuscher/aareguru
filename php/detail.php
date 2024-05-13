@@ -34,11 +34,11 @@
   
   <body>
   <header>
+    <a href="/">
       <img src="../data/img/logo.png" class="logo" alt="Logo" />
+    </a>
     </header>
-    <header>
-      <img src="../data/img/logo.png" class="logo" alt="Logo" />
-    </header>
+ 
     
   <div class="flexGrid">
     <button class="button" onclick="closeWindow()">Zrügg zur Chartä</button>
