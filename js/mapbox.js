@@ -8,6 +8,7 @@ var map = new mapboxgl.Map({
     zoom: 8.2 // Adjusted zoom level to encompass the broader area
 });
 
+
 map.on('zoomend', function() {
     if (map.getZoom() <= 6) {
         // Increase visibility of waterways when zoom level is 6 or below
@@ -48,15 +49,12 @@ map.on('load', function () {
                     .setHTML(`
                         <h3>${city.name}</h3>
                         <p>${city.popup}</p>
-                            <a href="${city.waterTempLink}" target="_blank">Details Wassertemperatur</a><br>
-                            <a href="${city.airTempLink}" target="_blank">Details Lufttemparatur</a><br>
-                            <a href="${city.flowLink}" target="_blank">Details Wassermenge</a><br>
+                            <a href="${city.waterTempLink}">Details Wassertemperatur</a><br>
+                            <a href="${city.airTempLink}">Details Lufttemparatur</a><br>
+                            <a href="${city.flowLink}">Details Wassermängi</a><br>
                     `))
                 .addTo(map);
                     })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
 });
 
     // Ensure the waterway layer is already added by checking if it exists

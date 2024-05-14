@@ -1,4 +1,4 @@
-<!-- TABLE VIEW (currently not in use) -->
+<!-- TABLE VIEW (currently not in) -->
 
 <?php
 

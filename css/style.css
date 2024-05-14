@@ -1,24 +1,24 @@
 body {
-  font-family: Comfortaa;
+  margin:0;
+  font-family: Poppins;
   line-height: 1.6;
-  margin: 0; /* Remove default margin */
-  padding: 20px; /* Padding around the content of the body */
-  background-color: #24ACCF;
+  background-image: url('/data/img/pattern_waves-20_1_2_0-0_0_1__25aed0_4051b5\ \(1\).png');
+  background-size: cover;
   align-items: center; /* Center vertically */
-  height: 100vh; /* Take full viewport height */
 }
+
 
 h1 {
   color: #ffe500;
   text-align: center; /* Center text horizontally */
-  font-size:xx-large;
+  font-size: 32pt;
   margin: 0;
 }
 
 h2 {
   color: #ffe500;
   text-align: center; /* Center text horizontally */
-  font-size: large;
+  font-size: 20pt;
   margin-top: 0px;
 }
 
@@ -29,17 +29,123 @@ h2 {
   width: 100%; /* Full width */
 }
 
+.flexGridDropDown {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically in the center */
+  margin-top: 10px; /* Add some margin-top */
+}
+
+.dropdown {
+  margin: 0 10px; /* Margin between dropdowns */
+  padding: 10px; /* Padding inside the dropdown */
+  background-color: #ffe500; /* Dropdown background color */
+  color: #666666; /* Dropdown text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
 .logo {
   height: 100px;  /* Adjust the size as needed */
   width: 100px;   /* Adjust the size as needed */
   position: absolute;
   top: 10px;     /* Adjust the position from the top */
-  right: 45px;    /* Adjust the position from the left */
+  left: 45px;    /* Adjust the position from the left */
   cursor: pointer;
   z-index: 1000;
 }
 
-.button {
+.homeGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Adjust height as needed */
+  color: #666666; /* Makes all text inside yellow */
+}
+
+.button-container {
+  display: flex;  /* Enables flexbox layout */
+  justify-content: center;  /* Centers horizontally in the flex container */
+  align-items: center;  /* Centers vertically in the flex container */
+  height: 10vh;  /* Full viewport height to center the button in the middle of the page */
+}
+
+.homeGrid p {
+    text-align: center; /* Centers the text horizontally */
+    line-height: 1.6; /* Increases line spacing for better readability */
+    font-size: 0.9em; /* Sets a slightly larger font size */
+    padding: 20px; /* Adds padding around the text */
+    max-width: 800px; /* Sets a maximum width for the paragraph */
+    margin: 10px; /* Centers the paragraph block in the container */
+    background-color: white; /* Dark background for contrast with yellow text */
+    border-radius: 6px; /* Rounds the corners of the text block */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* Subtle shadow for 3D effect */
+    border: 6px solid #ffe500; /* Light border around the text block */
+}
+
+.mapboxgl-popup-close-button {
+  width: 30px;
+  height: 30px;
+}
+
+.homeGrid .button {
+  padding: 10px 20px; /* Adds padding inside the button */
+  font-size: 1em; /* Adjust font size as needed */
+  background-color: #ffe500; /* Example background color */
+  border: none; /* Removes border */
+  cursor: pointer; /* Makes it clear it's clickable */
+  color: #666666; /* Text color for the button */
+  margin-bottom: 20px; /* Adds space below the button */
+}
+
+
+/* MAPBOX */
+.mapboxgl-popup-close-button {
+  font-size: 24px; /* Larger font size for the 'x' character */
+  width: 30px; /* Bigger width for easier tapping */
+  height: 30px; /* Bigger height for easier tapping */
+  line-height: 30px; /* Centers the 'x' vertically */
+  color: #ffe500;
+}
+
+@media (max-width: 600px) {
+  .mapboxgl-popup-close-button {
+      font-size: 36px; /* Even larger font size on smaller screens */
+      width: 40px; /* Adjusted for easier tapping on mobile */
+      height: 40px; /* Adjusted for easier tapping on mobile */
+      line-height: 40px; /* Ensures the 'x' remains centered */
+  }
+}
+
+/* Style for the popup content and links */
+.mapboxgl-popup-content {
+  font-family: Arial, sans-serif; /* Ensures font consistency */
+  background-color: #f4f4f4; /* Light background for the popup */
+  color: #333; /* Dark color for text for better readability */
+  padding: 10px; /* Adds padding inside the popup */
+  border-radius: 8px; /* Rounded corners for the popup */
+}
+
+.mapboxgl-popup-content a {
+  display: block; /* Makes each link full-width of the popup */
+  margin: 0; /* Adds space between links */
+  padding: 10px 15px; /* Padding inside each link */
+  background-color: #ffe500; /* Blue background matching the screenshot */
+  color: #666666; /* White text color */
+  text-align: center; /* Centers text inside the link */
+  border-radius: 5px; /* Rounded corners for links */
+  text-decoration: none; /* Removes underline from links */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.mapboxgl-popup-content a:hover {
+  background-color: #ccb700; /* Darker blue on hover for better interaction */
+}
+
+
+.homeButton {
   padding: 10px 20px;
   font-size: 16px;
   color: #666666;
@@ -50,7 +156,6 @@ h2 {
   transition: background-color 0.3s, box-shadow 0.3s;
   position: absolute; /* Position absolutely within its parent */
   z-index: 1000;
-  margin-left: 2.7%;
 }
 
 .mapboxgl-popup-content {
@@ -58,7 +163,7 @@ h2 {
   color: #ffe500;
   font-size: 14px;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 .detail-header {
@@ -68,7 +173,17 @@ h2 {
   font-size: xx-large;
   margin: 0; /* Remove margin to ensure proper centering */
   z-index: 1;
+  font-size: 32pt;
   position: relative; /* Ensure it is in normal document flow */
+  margin-top: 30px;
+}
+
+.map-header {
+  color: #ffe500;
+  text-align: center; /* Center text horizontally */
+  font-size:xx-large;
+  margin-top: 30px;
+  font-size: 32pt;
 }
 
 .button:hover, .button:focus {
@@ -90,7 +205,6 @@ h2 {
 
 .chartContainer {
   background-color: white;
-  height: 95%;
   padding: 10px;
   box-sizing: border-box; /* Include padding and border in the width */
   border-radius: 4pt;
@@ -118,24 +232,47 @@ canvas {
   cursor: pointer;
 }
 
-@media (max-width: 890px) {
-
-}
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .container {
     width: 95%; /* Allow a little margin on very small devices */
     margin: 10px auto;
     padding: 10px;
   }
-  body {
-    padding: 10px; /* Reduce padding on smaller screens */
-  }
+
   canvas {
     height: 200px; /* Smaller canvas on small screens */
+  }  
+
+}
+
+@media (max-width: 740px) {
+  
+  .detail-header {
+    color: #ffe500;
+    text-align: center; /* Center text horizontally */
+    font-size: 28pt;
+    margin-top: 120px;
   }
-  .button {
-    margin-top: 700px;
-    margin-left: 33%;
+  .map-header {
+    color: #ffe500;
+    text-align: center; /* Center text horizontally */
+    font-size: 28pt;
+    margin-top: 120px;
+  }
+}
+@media (max-width: 930px) {
+  #backToCardButton {
+    display: none;
+  }
+  .logo {
+    height: 100px;  /* Adjust the size as needed */
+    width: 100px;   /* Adjust the size as needed */
+    position: absolute;
+    top: 10px;     /* Adjust the position from the top */
+    left: 25px;    /* Adjust the position from the left */
+    cursor: pointer;
+    z-index: 1000;
   }
 }
 
@@ -169,3 +306,133 @@ canvas {
   border-radius: 10px; /* Rounded corners for the map */
 }
 
+/* HAMBURGER MENU */
+.hamburger {
+  display: none; /* Hidden by default */
+}
+
+.menu {
+  display: none; /* Hidden by default */
+}
+
+.hamburger {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  font-size: 60px;
+  cursor: pointer;
+  color: #ffe500; /* Ensure this matches your desired default color */
+  z-index: 1001;
+}
+
+.menu {
+  display: none; /* Hidden by default, will be shown when the hamburger is clicked */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffe500;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu a {
+  font-size: 24px;
+  color: #24ACCF;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+header, .flexGrid, .container, .flexGridDropDown, .chartContainer {
+  flex: 0 0 auto; /* Do not grow or shrink */
+}
+
+main {
+  margin: 0;
+  flex: 1; /* Allow main content to grow and take up available space */
+}
+
+.footer {
+  background-color: #ffe500; /* Yellow background */
+  color: #666666; /* Text color */
+  margin: 0;
+  text-align: center; /* Center text */
+  padding: 10px; /* Padding around the content */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.footer a {
+  color: #666666; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+
+
+/* MODAL IMG */
+/* Style the Image Used to Trigger the Modal */
+img {
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

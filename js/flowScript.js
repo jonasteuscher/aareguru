@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         y: {
                             title: {
                                 display: true,
-                                text: 'Wassermenge (m3/s)'
+                                text: 'Wassmängi (m3/s)'
                             },
                             beginAtZero: true
                         }
