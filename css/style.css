@@ -107,7 +107,7 @@ h2 {
   width: 30px; /* Bigger width for easier tapping */
   height: 30px; /* Bigger height for easier tapping */
   line-height: 30px; /* Centers the 'x' vertically */
-  color: #ffe500;
+  color: #24ACCF;
 }
 
 @media (max-width: 600px) {
@@ -132,8 +132,8 @@ h2 {
   display: block; /* Makes each link full-width of the popup */
   margin: 0; /* Adds space between links */
   padding: 10px 15px; /* Padding inside each link */
-  background-color: #ffe500; /* Blue background matching the screenshot */
-  color: #666666; /* White text color */
+  background-color: #24ACCF; /* Blue background matching the screenshot */
+  color: white; /* White text color */
   text-align: center; /* Centers text inside the link */
   border-radius: 5px; /* Rounded corners for links */
   text-decoration: none; /* Removes underline from links */
@@ -141,7 +141,7 @@ h2 {
 }
 
 .mapboxgl-popup-content a:hover {
-  background-color: #ccb700; /* Darker blue on hover for better interaction */
+  background-color: #1C89A5; /* Darker blue on hover for better interaction */
 }
 
 
@@ -158,9 +158,14 @@ h2 {
   z-index: 1000;
 }
 
+.homeButton:hover {
+  background-color: #ccb700; /* Darker blue on hover */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
 .mapboxgl-popup-content {
-  background-color: #24ACCF;
-  color: #ffe500;
+  background-color: white;
+  color: #666666;
   font-size: 14px;
   padding: 10px;
   border-radius: 7px;
