@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             },
                             title: {
                                 display: true,
-                                text: 'Datum'
+                                text: 'Datum vor Mässig'
                             }
                         },
                         y: {
