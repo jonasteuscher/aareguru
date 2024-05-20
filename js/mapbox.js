@@ -8,16 +8,20 @@ var map = new mapboxgl.Map({
     zoom: 8.2 // Adjusted zoom level to encompass the broader area
 });
 
+// Add the Mapbox GL Language plugin
+map.addControl(new MapboxLanguage({
+    defaultLanguage: 'de' // Set the default language to German
+}));
 
 map.on('zoomend', function() {
     if (map.getZoom() <= 6) {
         // Increase visibility of waterways when zoom level is 6 or below
         map.setPaintProperty('waterway', 'line-color', '#0000FF'); // Bright blue color
-        map.setPaintProperty('waterway', 'line-width', 3); // Thicker line
+        map.setPaintProperty('waterway', 'line-width', 6); // Thicker line
     } else {
         // Revert to normal visibility when zoom level is above 6
         map.setPaintProperty('waterway', 'line-color', '#5e94f3'); // Default blue color
-        map.setPaintProperty('waterway', 'line-width', 1); // Default line width
+        map.setPaintProperty('waterway', 'line-width', 6); // Default line width
     }
 });
 
@@ -61,7 +65,7 @@ map.on('load', function () {
     if (map.getSource('composite')) {
         // The 'waterway' layer already exists in many Mapbox default styles under the source 'composite'
         map.setPaintProperty('waterway', 'line-color', '#0000FF'); // Set waterways to blue
-        map.setPaintProperty('waterway', 'line-width', 2); // Increase line width for visibility
+        map.setPaintProperty('waterway', 'line-width', 4); // Increase line width for visibility
     } else {
         // If not, you might need to add the waterway layer manually (this usually isn't necessary with default styles)
         map.addLayer({
