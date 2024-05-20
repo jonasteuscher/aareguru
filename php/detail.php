@@ -197,6 +197,6 @@
   <br><br><br><br><br><br> 
   <footer class="footer">
       <p>All rights reserved © <a href="https://fhgr.ch/" target="_blank">FHGR</a></p>
-      <p>Poweder by <a href="https://aareguru.existenz.ch/openapi/" target="_blank">Aareguru</a></p>
+      <p>Powered by <a href="https://aareguru.existenz.ch/openapi/" target="_blank">Aareguru</a></p>
     </footer>
 </html>
