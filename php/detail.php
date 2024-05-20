@@ -82,6 +82,7 @@
         <a href="/"><b>Home</b></a>
         <a href="/map.html"><b>Charte</b></a>
         <a href="/php/detail.php?city=Bärn&detailView=water"><b>Detailahsicht</b></a>
+        <a href="/about.html"><b>Über üs</b></a>
       </div>
   
   </body>

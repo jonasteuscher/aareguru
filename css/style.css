@@ -2,7 +2,7 @@ body {
   margin:0;
   font-family: Poppins;
   line-height: 1.6;
-  background-image: url('/data/img/pattern_waves-20_1_2_0-0_0_1__25aed0_4051b5\ \(1\).png');
+  background-image: url('/data/img/pattern_waves.png');
   background-size: cover;
   align-items: center; /* Center vertically */
 }
@@ -146,7 +146,7 @@ h2 {
 
 
 .homeButton {
-  padding: 10px 20px;
+  padding: 10px 40px;
   font-size: 16px;
   color: #666666;
   background-color: #ffe500;
