@@ -1,7 +1,6 @@
 <html>
     <head>
         <title>Aareguru 2.0</title>
-        <link rel="stylesheet" href="../../css/style.css">
     </head>
     <body>
     <div class="city-container">

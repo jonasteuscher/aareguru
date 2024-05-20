@@ -64,4 +64,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return color; // Erzeugt eine zufällige Farbe
     }
+    
 });
