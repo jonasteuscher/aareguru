@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAREWÄRT</title>
+    <title>AAREWÄRT - Detailahsicht</title>
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
